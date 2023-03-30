@@ -50,7 +50,7 @@ async function insertTransaction(id,qty){
 }
 
 async function showAllTransactionDate(date){
-    const [item]= await pool.query("SELECT SUM(quantity) FROM tb_transaksi where tanggal = ?",[date])
+    const item= await pool.query("SELECT SUM(quantity) FROM tb_transaksi where tanggal = ?",[date])
     console.log(item)
 }
 
@@ -60,5 +60,8 @@ async function showTransactionItemDate(date,id){
 }
 
 
+// insertTransaction(1,3)
+
 showAllTransactionDate("2023-02-19")
-showTransactionItemDate("2023-02-19",1)
+// showTransactionItemDate("2023-02-19",1)
+
